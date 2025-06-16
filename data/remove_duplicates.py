@@ -2,24 +2,17 @@ import aiosqlite
 import asyncio
 
 
-# def remove_duplicates():
-#     conn = sqlite3.connect('db/cars_sql.db')
-#     conn.execute("""
-#         DELETE FROM cars
-#         WHERE rowid NOT IN (
-#             SELECT MIN(rowid)
-#             FROM cars
-#             GROUP BY car_number
-#         )
-#     """)
-#     conn.commit()
-#     conn.close()
-
-
-async def drop_table():
+async def remove_duplicates():
     async with aiosqlite.connect('db/cars_sql.db') as conn:
-        await conn.execute("DROP TABLE IF EXISTS cars")
+        await conn.execute('''
+            DELETE FROM cars
+            WHERE id NOT IN (
+                SELECT MIN(id)
+                FROM cars
+                GROUP BY car_number
+            )
+        ''')
         await conn.commit()
-        print("Таблица 'cars' удалена.")
+        print("Дубликаты по car_number удалены.")
 
-asyncio.run(drop_table())
+asyncio.run(remove_duplicates())
