@@ -1,0 +1,46 @@
+<footer>
+    <div class="container">
+        <div>
+            <a href="/" class="logo-link">EncarNN</a>
+            <span>Работаем с 2008 года</span>
+        </div>
+        <div>
+            <h1>Каталог авто из Кореи</h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'cars-korea' %}?brand=Hyundai" target="_blank">Hyundai</a></li>
+                    <li><a href="{% url 'cars-korea' %}?brand=Genesis" target="_blank">Genesis</a></li>
+                    <li><a href="{% url 'cars-korea' %}?brand=Kia" target="_blank">Kia</a></li>
+                    <li><a href="{% url 'cars-korea' %}?brand=Renault" target="_blank">Renault</a></li>
+                    <li><a href="{% url 'cars-korea' %}?brand=SsangYong" target="_blank">Ssang Yong</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div>
+            <h1>Новые авто</h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'new-cars' %}?brand=Hyundai&" target="_blank">Hyundai</a></li>
+                    <li><a href="{% url 'new-cars' %}?brand=Genesis" target="_blank">Genesis</a></li>
+                    <li><a href="{% url 'new-cars' %}?brand=Kia" target="_blank">Kia</a></li>
+                    <li><a href="{% url 'new-cars' %}?brand=Renault" target="_blank">Renault</a></li>
+                    <li><a href="{% url 'new-cars' %}?brand=SsangYong" target="_blank">Ssang Yong</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="{{ settings.instagram_url }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="{{ settings.whatsapp_url }}" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                    <li><a href="{{ settings.telegram_url }}" target="_blank"><i class="fab fa-telegram"></i></a></li>
+                </ul>
+            </nav>
+            <p>{{ settings.phone_number }}</p>
+            <p>{{ settings.email }}</p>
+        </div>
+    </div>
+    <div class="container footer-under-text">
+        <p>Предложения на сайте не являются публичной офертой</p>
+    </div>
+</footer>
