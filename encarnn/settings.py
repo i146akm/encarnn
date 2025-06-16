@@ -177,11 +177,11 @@ CKEDITOR_CONFIGS = {
 }
 
 
-STATIC_URL = '/root/encarnn/static/'
-MEDIA_URL = '/root/encarnn/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATICFILES_DIRS = [BASE_DIR / 'static']
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/var/www/encarnn/media'
+STATICFILES_DIRS = [BASE_DIR, 'static']
+STATIC_ROOT = '/var/www/encarnn/staticfiles'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
