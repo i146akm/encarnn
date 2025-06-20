@@ -135,6 +135,7 @@ class CarAd(models.Model):
     fuel_type = models.CharField('Топливо', choices=FUEL_TYPE_CHOICES, null=True, max_length=255)
     mileage = models.PositiveIntegerField('Пробег', )
     color = models.CharField('Цвет', choices=COLOR_CHOICES, null=True, max_length=255)
+    seats_num = models.PositiveIntegerField('Мест', null=True)
     price = models.FloatField('Цена',
         null=True,
     )
